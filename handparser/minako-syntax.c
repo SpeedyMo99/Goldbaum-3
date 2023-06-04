@@ -41,7 +41,8 @@ void isTokenAndEat(int token) {
         char expectedChar = (char)token;
         char currentChar = (char)currentToken;
         fprintf(stderr, "ERROR: Syntaxfehler in Zeile: %d \nExpected: %c \nCurrent: %c \n", yylineno, expectedChar, currentChar);
-        exit(EXIT_FAILURE);
+        //exit(EXIT_FAILURE);
+        exit(-1);
     }
     eat();
 }
@@ -68,6 +69,7 @@ void factor() {
     }
     else {
         printf("Error");
+        exit(-1);
     }
 }
 
@@ -170,6 +172,7 @@ void statement() {
         return;
     } else {
         printf("Error");
+        exit(-1);
     }
 }
 
